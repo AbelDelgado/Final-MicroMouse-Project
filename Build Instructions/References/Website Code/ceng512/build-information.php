@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
+		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<title>Micromouse Project</title>
+	</head>
+
+	<body>
+
+	<header>
+		<?php include 'header.php'; ?>
+	</header>
+
+	<nav>
+		<?php include 'menu.php'; ?>
+	</nav>
+
+	<section>
+				<h1>Parts List</h1>
+				<table width="800">
+					<tr>
+							<td><img src=img/motor_driver.jpg alt="motor driver" height="123" width="133"></td>
+							<td>
+								<br><a href="http://munro.humber.ca/~gray/CENG512/DC-Motor.htm">DC Motor Driver Board assembly</a><br>
+								<a href="img/DCMotorCntlSchema.jpg">Motor control schematic</a><br>
+								<br>Parts list&#58;
+									<ul style="list-style-type:circle">
+  										<li>Two 2x25 right angle male pin headers</li>
+  										<li>One 14 pin DIP IC socket</li>
+  										<li>Two 16 pin DIP IC sockets</li>
+  										<li>Three 0.1uF ceramic capacitors</li>
+  										<li>Five 2 pin interlocking screw terminal blocks</li>
+  										<li>Printed circuit board</li>
+									</ul>
+							</td>
+					</tr>
+					<tr>
+							<td><img src="img/backplane.jpg" alt="back plane" height="103" width="133"></td>
+							<td>
+								<br><a href="http://munro.humber.ca/~gray/CENG512/Backplane.htm">Back Plane Board assembly</a><br>
+								<a href="img/BackplaneSchema.jpg">Back plane schematic</a><br>
+								<br>Parts list&#58;
+									<ul style="list-style-type:circle">
+										<li>Two back plane printed circuit boards</li>
+										<li>Two 2x25 right angle male pin headers</li>
+										<li>Four 2x25 female socket headers</li>
+									</ul>
+							</td>
+					</tr>
+					<tr>
+							<td><img src="img/protoboard-1.jpg" alt="back plane" height="128" width="133">
+								 <img src="img/protoboard-2.jpg" alt="back plane" height="128" width="133">
+							</td>
+							<td>
+								<br><a href="http://munro.humber.ca/~gray/CENG512/LCD.htm">LCD&#47;Protoboard assembly</a><br>
+								<a href="img/LCDProtSchema.jpg">LCD protoboard schematic</a>&#44;
+								<a href="img/LCDProtLayout.jpg">LCD protoboard layout</a><br>
+								<br>Parts list&#58;
+									<ul style="list-style-type:circle">
+										<li>LCD&#47;Protoboard circuit board</li>
+										<li>Two 2x25 female header sockets</li>
+										<li>1x16 female header socket</li>
+										<li>10K trimpot</li>
+										<li>0&#46;1uF ceramic capacitor</li>
+									</ul>
+							</td>
+					</tr>
+					<tr>
+							<td><img src="img/lcd_module.jpg" alt="lcd module" height="75" width="133"></td>
+							<td>
+								<br><a href="http://technologicalarts.ca/shop/store/details/86/43/components/displays/16-character-4-line-non-backlit-lcd.html">LCD Module</a><br>
+							</td>
+					</tr>
+					<tr>
+							<td><img src="img/Adapt9S12DP256M0_4a65d0f35c4bf_160x120.jpg" alt="Adapt9S12DP256M0" height="165" width="205"></td>
+							<td>
+								<a href="http://technologicalarts.ca/shop/store/details/419/108/9s12/adapt9s12d/modules/adapt9s12dp256m0-module,-minimal-configuration.html">Adapt9S12DP256M0 Module</a><br>
+							</td>
+					</tr>
+					<tr>
+							<td><img src=img/battery_pack_holder.JPG alt="battery pack holder" height="153" width="180"></td>
+							<td>
+									Battery Pack Holder<br>
+									File&#58; <a href="docs/battery_holder_mount.stl"> battery&#95;holder&#95;mount&#46;stl</a>
+							</td>
+					</tr>
+					<tr>
+							<td><img src=img/Chasis.jpg alt="chassis" height="140" width="200"></td>
+							<td>
+								<br><a href="https://www.pololu.com/product/1090">Chassis Assembly</a><br>
+								<br>Parts list&#58;
+								<ul style="list-style-type:circle">
+										<li>5 inch Robot Chassis RRC04A</li>
+										<li>Wheel 42x19mm Pair</li>
+										<li>Micro Metal Gearmotor Bracket Extended Pair</li>
+										<li>Encoder for Wheel 42x19mm</li>
+										<li>Micro Metal Gearmotors</li>
+										<li>Ball Caster with 3&#47;8 inch Metal Ball</li>
+								</ul>
+							</td>
+					</tr>
+					<tr>
+							<td><img src=img/reflectance_sensor.jpg  alt="refelectance sensor" height="180" width="180"><br>
+							    <img src=img/sensor_mount.JPG alt="sensor mount" height="132" width="170">
+							<td>
+									<a href="https://www.pololu.com/product/958"> 8 Reflectance Sensors</a><br>
+									<br><br>Sensor mounts files&#58;
+									<ul style="list-style-type:none">
+										<li><a href="docs/front_sensor_mount.stl"> front&#95;sensor&#95;mount&#46;stl</a></li>
+										<li><a href="docs/side_sensors_mount.stl"> side&#95;sensors&#95;mount&#46;stl</a></li>
+									</ul>
+							</td>
+				</table>
+	</section>
+				
+	</body>
+
+</html>
