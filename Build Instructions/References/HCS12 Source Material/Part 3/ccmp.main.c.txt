@@ -1,0 +1,30 @@
+/* This is sample code to demonstrate conditional compile  */
+/* PortP,0-3 - LCD control        4-7 - PWM on motors      */
+/* PortS,0-3 -                    4-7 - LCD data           */
+/* PortT,0-3 - Motor direction    4-7 - XIRQ Inputs        */
+/* PortAD0/AN0 0-4 - A/D Sensor inputs                     */
+/* Ports A and B  are not used by the mouse                */
+/* K.Baker  February 6, 2012                               */
+#include "DBug12.h"     /* Require DB12printf.c in Sources */
+#include <hidef.h>      /* common defines and macros       */
+#include "derivative.h" /* derivative-specific definitions */
+#include "main_asm.h"   /* interface to the assembly module*/
+#define MOUSE  0        /* 1=mouse ; 0=simulate            */  
+
+unsigned int dataA;
+
+void main(void) {
+/* configure port A as input           */
+      DDRA = 0X00;           
+/* read the port and save data         */
+      dataA = PORTA;
+/* Assembly to config Port B and display */ 
+      asm_main(); /* call the assembly function */
+/* display the contents on the terminal */
+#if MOUSE == 1
+      printf("Port A: %i", dataA);
+      printf("Port B: %i", dataB);
+#endif
+/* regular end                         */
+      asm("swi");
+}

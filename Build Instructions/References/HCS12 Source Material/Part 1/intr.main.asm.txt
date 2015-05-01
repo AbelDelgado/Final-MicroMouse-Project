@@ -1,0 +1,52 @@
+;**************************************************************
+;* This assembly code module is the Interrupt Service Routine *
+;* Input  : High four bit of port T                           *
+;* Output : I/P =0 : Return via Reset                         *
+;*        : Bits are returned in intrNum variable             *
+;* Author : K.C.Baker   Jan.23,2012                           *
+;**************************************************************
+
+; export symbols
+            XDEF asm_main , StartAddr , SoftXIRQ , intrNum
+            ; These must be included in main_asm.h
+
+; Include derivative-specific definitions 
+		INCLUDE 'derivative.inc'  		
+
+SoftXIRQ equ $3E74		    
+
+MY_EXTENDED_RAM: SECTION
+; Insert here your data definition. For demonstration, temp_byte is used.
+intrNum:    DS.W   1       ; interrupt number
+temp_byte:  DS.B   1
+StartAddr:  DC.W   asm_main
+
+; code section
+MyCode:     SECTION
+; this assembly routine is called by the C/C++ application
+asm_main:
+; Set up the motor direction ports - port T
+; Port T, bits 0,1,2,3 - used for motor direction (O/P)
+; Port T, bits 4,5,6,7 - used for IRQ input determination (I/P)
+;       LDAA  #$0F       ; bits0-3=output, bits4-7=input
+;       STAA  DDRT       ; Port T Data Dir Reg
+;       LDAA  #$00
+;       STAA  RDRT       ; Reduced drive disabled
+;       LDAA  #$F0
+;       STAA  PERT       ; pull-up selected for I/P
+;       LDAA  #$00
+;       STAA  PPST       ; enable pull-up
+            LDAB  PTT              ; read port T
+            ANDB  #%11110000       ; clear high nibble
+            LSRB                   ; shift to low nibble
+            LSRB
+            LSRB
+            LSRB
+;            ldab  #%00000010      ; test byte
+            CLRA
+            STD   intrNum         ; save the intr num
+            BNE   newIntr         ; jump if intr
+            JMP   $F000           ; THIS IS A RESET!
+newIntr:    
+            RTI                   ; Back to the C prog!
+                 

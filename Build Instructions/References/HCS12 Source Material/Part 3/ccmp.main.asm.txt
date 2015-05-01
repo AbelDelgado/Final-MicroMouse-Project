@@ -1,0 +1,102 @@
+;**************************************************************
+;* This is sample code to demonstrate conditional compile     *
+;* Ports A and B are not used by the mouse                    *
+;* K.Baker  February 6, 2012                                  *
+;**************************************************************
+
+; export symbols
+            XDEF asm_main
+            XDEF dataB     ; out to C
+            XREF dataA     ; in from C
+            
+; Include derivative-specific definitions 
+		INCLUDE 'derivative.inc' 
+
+MOUSE equ 0  ; 1 = mouse    0 = simulate
+  IF MOUSE = 1 
+; equate addresses for terminal
+printf     equ $EE88 ; printf function 
+out2hex    equ $EE9C ; output 2 chars to screen
+out4hex    equ $EEA0 ; output 4 chars to screen
+; equate addresses for LCD
+lcd_banner equ $0FEE ; LCD banner 
+lcd_clear  equ $0FE4 ; clear the display
+lcd_cmd    equ $0FEA ; send a command
+lcd_init   equ $0FEC ; initialize the LCD
+lcd_putc   equ $0FE8 ; send a single char 
+lcd_puts   equ $0FE6 ; display my message
+
+  ENDIF		    
+; variable/data section
+MY_EXTENDED_RAM: SECTION
+; Insert here your data definition. For demonstration, temp_byte is used.
+temp_byte:  DS.B   1
+dataB:      DS.W   1      ; Port A storage
+; constant data
+MY_EXTENDED_CONST: SECTION
+MsgInit:    dc.b  "Init ", $00
+MsgPortA:   dc.b  " PPA ", $00
+MsgPortB:   dc.b  " PPB ", $00
+; code section
+MyCode:     SECTION
+; this assembly routine is called by the C/C++ application
+asm_main:
+; confuigure port B as input   
+            LDAA   #$00       ; port B as input
+            STAA   DDRB
+; read the port and save data  
+            LDAB   PORTB
+            LDAA   #0
+            STD    dataB
+; Set up the LCD display
+            LDX   #0
+            JSR   [lcd_init,x]   ; Initialize the LCD
+            LDD   #MsgInit
+            LDX   #0     
+            JSR   [lcd_puts,x]   ; LCD "Init " message
+; Display the contents on the LCD  
+            LDD   #MsgPortA    ;load LCD title "PPA"
+            LDX   #0
+            JSR   [lcd_puts,x] ; message to lcd
+            LDD   #dataA       ;load Port A data
+            LDX   #0
+            JSR   [lcd_puts,x] ; data to lcd
+            LDD   #MsgPortB    ;load LCD title "PPB"
+            LDX   #0
+            JSR   [lcd_puts,x] ; message to lcd
+            LDD  #dataB        ;load Port B data
+            LDX   #0
+            JSR   [lcd_puts,x] ; data to lcd
+; Display the contents on the terminal 
+            LDD   #MsgPortA      ; load pc message "PPA"
+            LDX   #0
+            JSR   [printf,x]
+            LDD   #dataA
+            LDX   #0
+            JSR  [out4hex,x]    ;data to screen
+            LDD  #MsgPortB      ; load pc message "PPB"
+            LDX   #0
+            JSR   [printf,x]
+            LDD  #dataB
+            LDX   #0
+            JSR  [out4hex,x]   ;data to screen
+; Back to C
+            RTS                   ; return to caller
+
+  IF MOUSE = 0      ; No mouse, this is for test
+
+; equate addresses for terminal
+printf:     ; equ $EE88 ; printf function 
+out2hex:    ; equ $EE9C ; output 2 chars to screen
+out4hex:    ; equ $EEA0 ; output 4 chars to screen
+; equate addresses for LCD
+lcd_banner: ; equ $0FEE ; LCD banner 
+lcd_clear:  ; equ $0FE4 ; clear the display
+lcd_cmd:    ; equ $0FEA ; send a command
+lcd_init:   ; equ $0FEC ; initialize the LCD
+lcd_putc:   ; equ $0FE8 ; send a single char 
+lcd_puts:   ; equ $0FE6 ; display my message
+          DC.W noCode
+noCode:   RTS
+  ENDIF		    
+

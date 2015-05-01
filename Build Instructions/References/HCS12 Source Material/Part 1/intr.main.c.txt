@@ -1,0 +1,80 @@
+/*************************************************/
+/* Demo for the implementation of interrupts     */
+/* Inclusion of selection of options             */
+/* Author: K.C.Baker   Jan.16,2012               */
+/*************************************************/
+//#include <stdio.h>      /* Require termio.c in Sources  */
+#include "DBug12.h"     /* Require DB12printf.c in Sources  */
+#include <hidef.h>      /* common defines and macros */
+#include "derivative.h" /* derivative-specific definitions */
+#include "main_asm.h"   /* interface to the assembly module */
+
+void ramp(void);
+void search(void);  
+void solve(void);    
+void nothing(void);   
+int temp;
+void main(void) {   
+  printf("Mouse here");  
+// Set up the motor direction ports - port T
+// Port T, bits 0,1,2,3 - used for motor direction (O/P)
+// Port T, bits 4,5,6,7 - used for IRQ input determination (I/P)
+  DDRT = 0x0F;            /* Port T Data Dir Reg        */
+  RDRT = 0x00;            /* Reduce drive enabled       */
+  PERT = 0xF0;            /* Pull-up selected for I/P   */
+  PPST = 0X00;            /* Enable pull-up             */ 
+  
+  SoftXIRQ = StartAddr;   /* Set XIRQ to start of assembly */
+  intrNum = 0;
+//	EnableInterrupts;
+  while (1) {  /* master loop */
+//      asm_main(); /* call the assembly function */ 
+      while (intrNum == 0); /* check for interrupt */
+      switch (intrNum) {
+        case(0): {      /* reset test */
+          printf("Should be in reset"); 
+          break;
+        }
+        case(1): {      /* ramp */
+          ramp(); 
+          break;
+        }
+        case(2): {      /* search */
+          search(); 
+          break;
+        }
+        case(3): {      /* solve */
+          solve(); 
+          break;
+        }
+        default:       /* not implemented bits */
+          nothing();
+      }               /* end of switch */
+      intrNum = 0;    /* reset intr num to 0 */  
+  }            /* end of while */
+  for(;;) {
+    _FEED_COP(); /* feeds the dog */
+  } /* loop forever */
+  /* please make sure that you never leave main */
+}
+
+/* Code for the ramp test  */
+void ramp(void) {
+   printf("Ramp here");  
+}
+
+/* Code for the maze search  */
+void search(void) {
+   printf("Search here");  
+}
+
+/* Code for the maze solve   */
+void solve(void) {
+   printf("Solve here");  
+}
+
+/* Code for NO code!  */
+void nothing(void) {
+   printf("No code here, %x", intrNum);  
+  temp = 4; 
+}

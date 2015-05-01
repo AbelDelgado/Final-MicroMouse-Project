@@ -1,0 +1,41 @@
+;**************************************************************
+; Assembly Sample code to illustrate the integration of       *
+; C code and assembly language                                *
+; K. Baker January 30, 2012                                   *
+;**************************************************************
+; export symbols
+; reference either in the main_asm.h file or linker .prm file 
+            XDEF asm_main, nxt_num, ASMData, ASMConst 
+; reference from C code              
+            XREF CData  ;External(C) declaration of variable
+            XREF CConst ;External(C) declaration of constant
+            XREF back2C ;External(C) declaration of function
+
+; Include derivative-specific definitions 
+		INCLUDE 'derivative.inc'  		
+		    
+; variable/data section
+MY_EXTENDED_RAM: SECTION
+; Define the variables in assembly and use in C 
+ASMConst:   DC.W 43 ; Definition of a constant
+MY_EXTENDED_CON: SECTION
+ASMData:    DS.W 1     ; Definition of a variable
+temp_byte:  DS.B 1
+
+; code section
+MyCode:     SECTION
+; this assembly routine is called by the C/C++ application
+asm_main:
+            LDD   #12
+            STD   CData
+            ADDD  CConst
+            STD   CData
+;            MOVB   #1,temp_byte   ; Just some demonstration code
+;            NOP                   ; Insert here your own code
+            RTS                    ; Return to caller
+
+nxt_num:                           ; Input is in reg B/D
+            INCB
+            JSR   back2C           ; function call back to C
+            RTS                    ; Return is in reg B/D
+

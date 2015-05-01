@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0066)http://printupon.ca/humber/course/CENG604/Technical/memory_map.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+   
+   <meta name="GENERATOR" content="Mozilla/4.7 [en] (Win98; U) [Netscape]">
+   <meta name="Author" content="Kenn Baker">
+   <title>CENG604 - Memory map stuff</title>
+      <style>
+ p.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+</style>
+<style type="text/css"></style></head>
+<body bgcolor="#FFFFFF">
+
+<h3 align="center"> CENG604<br>
+Computer Systems Project<br>
+Memory Map Data</h3>
+<p><u>Memory Mapping</u> 
+<br>
+<br>
+Huang - Table 3.2 , page 94<br>Memory Map:<br>• $0000 to $03FF I/O Registers (like RAM but each location has a special
+<br>
+function, notice ports)<br>• $0400 to $0FFF On-chip EEPROM<br>• $0D00 to $0FFF EEPROM Programs, used by the Debugger<br>• $1000 to $3FFF SRAM 12kb (one can read and write to this memory during
+<br>
+execution, it is cleared by power off)<br>• $1000 to $3BFF Available to user for Stack, programs and data (11kb).<br>• $3C00 to $3FFF Used by the Debugger,<br>• $4000 to $FFFF Flash EEPROM (FF00 to FFFF Interrupt Vectors)<br>• $4000 to $EE7F D-Bug12 code<br>• $EE80 to $EEBF User accessible function table<br>• $EEC0 to $EEFF Customization data<br>• $EF00 to $EF8B D-Bug12 startup code<br>• $EF8C to $EFFF Secondary reset/interrupt table<br>• $F000 to $FFFF Bootloader<br>
+<br>
+&nbsp;</p>
+<table border="1" width="65%">
+	<tbody><tr>
+		<td width="71"><u>Page</u></td>
+		<td width="107"><u>Address</u></td>
+		<td width="164"><u>Type</u></td>
+		<td width="234"><u>Content</u></td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="71">&nbsp;</td>
+		<td width="107">0000 - 3FFF</td>
+		<td width="164">Reg.,EEPROM,SRAM</td>
+		<td width="234">I/O, stack, data, temp. prog</td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="71">3EH=62</td>
+		<td width="107">4000 - 7FFF</td>
+		<td width="164">Flash</td>
+		<td width="234">DBug12</td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="71">3DH=61</td>
+		<td width="107">8000 - BFFF</td>
+		<td width="164">Flash</td>
+		<td width="234">DBug12&nbsp;&nbsp; PAGEABLE</td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="71">3FH=63</td>
+		<td width="107">C000 - FFFF</td>
+		<td width="164">Flash</td>
+		<td width="234">DBug12</td>
+		<td>&nbsp;</td>
+	</tr>
+</tbody></table>
+<p><br>
+<b><u>Page -- , Address 0000 - 3FFF</u></b>&nbsp;&nbsp; <br>
+$0000 to $03FF I/O Registers (like RAM but each location has a special function, notice ports)&nbsp; 
+1KB<br>$0400 to $0FFF On-chip EEPROM 3KB<br>$0D00 to $0FFF EEPROM Programs, used by the Debugger<br>
+<br>
+<u>Paul Michaud Code</u> <br>org $0EC0<br>S19 file ends at $0FD1<br>LCD Reserved by D-Bug12<br>org $0FE0<br>; Reserve space for 8 pointers at end of EEPROM<br>
+;LCDTABLE:<br>dc.w 0<br>dc.w 0<br>lcd_clear&nbsp; dc.w _lcd_clear<br>lcd_puts&nbsp;&nbsp; dc.w _lcd_puts ;$0FE6<br>lcd_putc&nbsp;&nbsp; dc.w _lcd_putc ;$0FE8<br>lcd_cmd&nbsp;&nbsp;&nbsp; dc.w _lcd_cmd ;$0FEA<br>lcd_init&nbsp;&nbsp; dc.w _lcd_init ;$0FEC<br>lcd_banner dc.w _lcd_banner ;must be at $0FEE<br>; Notes: -$0FF0 to $0FFF is reserved and should not be modified<br>; -$0FFD is the EEPROM protection byte which is copied into EPROT($114) on reset<br><br>$1000 to $3FFF SRAM 12KB (one can read and write to this memory during execution, it is cleared by power off)<br>
+<br>
+<u>D-BUG12 Interrupt Vector Table (initial)</u></p><pre>3E7E - 0000 - Reset 
+3E7C - 0000 - Clock monitor failure reset 
+3E7A - 0000 - COP failure reset 
+3E78 - 0000 - Unimplemented instruction trap 
+3E76 - 0000 - swi 
+3E74 - 0000 - XIRQ/ If value =0 then store register results and return to dbug12
+3E72 - 0000 - IRQ/ 
+3E7O - 0000 - Real-time interrupt </pre>
+$1000 to $3BFF Available to user for Stack, programs and data (11kb)<br>
+&nbsp;<br>
+<b><u>Page 3E , Address 4000 - 7FFF</u></b>&nbsp;&nbsp; <br>
+DBug12 code 16KB<br>
+<br>
+<b><u>Page 3D , Address 8000 - BFFF</u></b>&nbsp;&nbsp; <br>
+DBug12 code 16KB<br>
+<font face="Times New Roman" size="3"><br>
+<b><u>Page 3F , Address C000 - FFFF</u></b>&nbsp;&nbsp; <br>
+DBug12 code 16KB<br>
+</font><br><u>Appendix C</u><br><u>User Accessible Utility Routines</u><br>When operating in EVB mode, D-Bug12 v4.x.x provides access to 18 utility routines through an array of function pointers (addresses) beginning at $EE80.
+<br>
+Placing the table at a fixed address,allows access to the individual functions to remain constant even though the actual address of theroutines may move when changes are made to D-Bug12.<br>Because D-Bug12 was written almost entirely in C, the utility routines are presented as C function definitions. However, this does not mean that the utility routines are usable only when programming in C.
+<br>
+They may easily be accessed when programming in assembly language.<br>Figure C-1 shows a summary of the available utility routines. A complete description of each utility routine is provided later in Appendix C.<br>
+<br>
+<u>Function Description Pointer Address</u><br>far main() Start of D-Bug12 $EE80<br>getchar() Get a character from SCI0 or SCI1 $EE84<br>putchar() Send a character out SCI0 or SCI1 $EE86<br>printf() Formatted Output - Translates binary values to characters $EE88<br>far GetCmdLine() Obtain a line of input from the user $EE8A<br>far sscanhex() Convert an ASCII hexadecimal string to a binary integer $EE8E<br>isxdigit() Checks for membership in the set [0..9, a..f, A..F] $EE92<br>toupper() Converts lower case characters to upper case $EE94<br>isalpha() Checks for membership in the set [a..z, A..Z] $EE96<br>strlen() Returns the length of a null terminated string $EE98<br>strcpy() Copies a null terminated string $EE9A<br>far out2hex() Displays 8-bit number as 2 ASCII hex characters (I/P=B) $EE9C<br>far out4hex() Displays 16-bit number as 4 ASCII hex characters (I/P=D) $EEA0<br>SetUserVector() Setup user interrupt service routine $EEA4<br>far WriteEEByte() Write a data byte to on-chip EEPROM $EEA6<br>far EraseEE() Bulk erase on-chip EEPROM $EEAA<br>far ReadMem() Read data from the M68HC12 memory map $EEAE<br>far WriteMem() Write data to the M68HC12 memory map $EEB2<br>
+<br>
+Figure C-1, Utility Routines Summary, Page 90 of D-Bug12 Ref. Guide<br>
+<br><u>INTERRUPT VECTOR TABLE</u>
+<p></p>
+<pre>FFFE - F000 - Reset 
+FFFC - F833 - Clock monitor failure reset 
+FFFA - F82F - COP failure reset 
+FFF8 - F82B - Unimplemented instruction trap p 
+FFF6 - F827 - swi 
+FFF4 - F823 - XIRQ/ FFF2 - F81F - IRQ/ 
+FFFO - F81B - Real-time interrupt
+</pre><p></p>
+
+
+<p><br>
+<br>
+Revision date: February 13, 2012<br>
+<font face="Times New Roman">© 2012, PrintUpon</font> &nbsp; &nbsp;</p>
+
+
+
+
+</body></html>

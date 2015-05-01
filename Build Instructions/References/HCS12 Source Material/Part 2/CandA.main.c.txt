@@ -1,0 +1,30 @@
+/* C Sample code to illustrate the integration of    */
+/* C code and assembly language                      */
+/* K. Baker January 30, 2012                         */
+#include <hidef.h>      /* common defines and macros */
+#include "derivative.h"      /* derivative-specific definitions */
+
+#include "main_asm.h"         /* interface to the assembly module */
+
+/* Define the variables in C and use in assembly                  */
+unsigned int CData;             /* Definition of integer variable */
+unsigned const int CConst = 23; /* Definition of integer constant */
+/* Define the C variables       */
+int Anum, Bnum;
+
+void main(void) {
+   asm_main();                 /* call the assembly function */
+   ASMData = ASMConst + 3;  
+   CData++;
+   Anum = 6;
+   Bnum = nxt_num(Anum);
+
+  for(;;) {
+    _FEED_COP(); /* feeds the dog */
+  } /* loop forever */
+  /* please make sure that you never leave main */
+}
+
+void back2C(void) {
+   Anum++;
+}   
