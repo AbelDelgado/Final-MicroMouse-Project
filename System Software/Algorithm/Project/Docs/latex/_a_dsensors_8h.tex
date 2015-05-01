@@ -1,0 +1,181 @@
+\hypertarget{_a_dsensors_8h}{}\section{Algorithims/\+A\+Dsensors.h File Reference}
+\label{_a_dsensors_8h}\index{Algorithims/\+A\+Dsensors.\+h@{Algorithims/\+A\+Dsensors.\+h}}
+
+
+Interface for A/\+D sensors.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_a_dsensors_8h_a01a80c98c58c05cb13b7c832f677b70f}{}\#define {\bfseries sensor\+On}(sensor\+Read)~((sensor\+Read) $<$ (0x20) ? (1) \+: (0))\label{_a_dsensors_8h_a01a80c98c58c05cb13b7c832f677b70f}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned short \hyperlink{_a_dsensors_8h_ad1e036b393c3368ab08c08df9c3d1105}{read\+Front\+Sensor} (void)
+\begin{DoxyCompactList}\small\item\em Gets front sensor reading. \end{DoxyCompactList}\item 
+unsigned short \hyperlink{_a_dsensors_8h_a02995de378d782efb12c895ad36d0dae}{read\+Right\+Wheel} (void)
+\begin{DoxyCompactList}\small\item\em Gets right wheel sensor reading. \end{DoxyCompactList}\item 
+unsigned short \hyperlink{_a_dsensors_8h_a847fe6438da6f26e3d1e1a4cde22758c}{read\+Right\+Wall} (void)
+\begin{DoxyCompactList}\small\item\em Gets right wall sensor reading. \end{DoxyCompactList}\item 
+unsigned short \hyperlink{_a_dsensors_8h_a57f05bd056f5c15cfa766f0661e4c3b4}{read\+Right\+Align} (void)
+\begin{DoxyCompactList}\small\item\em Gets right alignment sensor reading. \end{DoxyCompactList}\item 
+unsigned short \hyperlink{_a_dsensors_8h_a785872121fcadd3db669b91f548e3ce7}{read\+Left\+Wheel} (void)
+\begin{DoxyCompactList}\small\item\em Gets left wheel sensor reading. \end{DoxyCompactList}\item 
+unsigned short \hyperlink{_a_dsensors_8h_a075c7fc5b274bc22a9a43cb7c18630e1}{read\+Left\+Wall} (void)
+\begin{DoxyCompactList}\small\item\em Gets left wall sensor reading. \end{DoxyCompactList}\item 
+unsigned short \hyperlink{_a_dsensors_8h_ac60ac73fbe4598cdaf2bb2a6e1c42a00}{read\+Left\+Align} (void)
+\begin{DoxyCompactList}\small\item\em Gets left alignment sensor reading. \end{DoxyCompactList}\item 
+\hypertarget{_a_dsensors_8h_a4693cf1a9b4a910b084dd6d372ce5893}{}void {\bfseries show\+Sensors} (void)\label{_a_dsensors_8h_a4693cf1a9b4a910b084dd6d372ce5893}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface for A/\+D sensors. 
+
+\begin{DoxyAuthor}{Author}
+Madzivire Chikwanda 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22 April 2015
+\end{DoxyDate}
+Methods for reading sensor values. The A/\+D module has to be initialized by calling \hyperlink{init_8h_a2858154e2009b0e6e616f313177762bc}{init()} , defined in \hyperlink{init_8h}{init.\+h}, before methods defined in this file can be called. 
+
+\subsection{Function Documentation}
+\hypertarget{_a_dsensors_8h_ad1e036b393c3368ab08c08df9c3d1105}{}\index{A\+Dsensors.\+h@{A\+Dsensors.\+h}!read\+Front\+Sensor@{read\+Front\+Sensor}}
+\index{read\+Front\+Sensor@{read\+Front\+Sensor}!A\+Dsensors.\+h@{A\+Dsensors.\+h}}
+\subsubsection[{read\+Front\+Sensor}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short read\+Front\+Sensor (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_a_dsensors_8h_ad1e036b393c3368ab08c08df9c3d1105}
+
+
+Gets front sensor reading. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unsigned short
+\end{DoxyReturn}
+Front sensor reading is returned as an unsigned short type. \hypertarget{_a_dsensors_8h_ac60ac73fbe4598cdaf2bb2a6e1c42a00}{}\index{A\+Dsensors.\+h@{A\+Dsensors.\+h}!read\+Left\+Align@{read\+Left\+Align}}
+\index{read\+Left\+Align@{read\+Left\+Align}!A\+Dsensors.\+h@{A\+Dsensors.\+h}}
+\subsubsection[{read\+Left\+Align}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short read\+Left\+Align (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_a_dsensors_8h_ac60ac73fbe4598cdaf2bb2a6e1c42a00}
+
+
+Gets left alignment sensor reading. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unsigned short
+\end{DoxyReturn}
+Sensor reading is returned as an unsigned short type. \hypertarget{_a_dsensors_8h_a075c7fc5b274bc22a9a43cb7c18630e1}{}\index{A\+Dsensors.\+h@{A\+Dsensors.\+h}!read\+Left\+Wall@{read\+Left\+Wall}}
+\index{read\+Left\+Wall@{read\+Left\+Wall}!A\+Dsensors.\+h@{A\+Dsensors.\+h}}
+\subsubsection[{read\+Left\+Wall}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short read\+Left\+Wall (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_a_dsensors_8h_a075c7fc5b274bc22a9a43cb7c18630e1}
+
+
+Gets left wall sensor reading. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unsigned short
+\end{DoxyReturn}
+Sensor reading is returned as an unsigned short type. \hypertarget{_a_dsensors_8h_a785872121fcadd3db669b91f548e3ce7}{}\index{A\+Dsensors.\+h@{A\+Dsensors.\+h}!read\+Left\+Wheel@{read\+Left\+Wheel}}
+\index{read\+Left\+Wheel@{read\+Left\+Wheel}!A\+Dsensors.\+h@{A\+Dsensors.\+h}}
+\subsubsection[{read\+Left\+Wheel}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short read\+Left\+Wheel (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_a_dsensors_8h_a785872121fcadd3db669b91f548e3ce7}
+
+
+Gets left wheel sensor reading. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unsigned short
+\end{DoxyReturn}
+Sensor reading is returned as an unsigned short type. \hypertarget{_a_dsensors_8h_a57f05bd056f5c15cfa766f0661e4c3b4}{}\index{A\+Dsensors.\+h@{A\+Dsensors.\+h}!read\+Right\+Align@{read\+Right\+Align}}
+\index{read\+Right\+Align@{read\+Right\+Align}!A\+Dsensors.\+h@{A\+Dsensors.\+h}}
+\subsubsection[{read\+Right\+Align}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short read\+Right\+Align (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_a_dsensors_8h_a57f05bd056f5c15cfa766f0661e4c3b4}
+
+
+Gets right alignment sensor reading. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unsigned short
+\end{DoxyReturn}
+Sensor reading is returned as an unsigned short type. \hypertarget{_a_dsensors_8h_a847fe6438da6f26e3d1e1a4cde22758c}{}\index{A\+Dsensors.\+h@{A\+Dsensors.\+h}!read\+Right\+Wall@{read\+Right\+Wall}}
+\index{read\+Right\+Wall@{read\+Right\+Wall}!A\+Dsensors.\+h@{A\+Dsensors.\+h}}
+\subsubsection[{read\+Right\+Wall}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short read\+Right\+Wall (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_a_dsensors_8h_a847fe6438da6f26e3d1e1a4cde22758c}
+
+
+Gets right wall sensor reading. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unsigned short
+\end{DoxyReturn}
+Sensor reading is returned as an unsigned short type. \hypertarget{_a_dsensors_8h_a02995de378d782efb12c895ad36d0dae}{}\index{A\+Dsensors.\+h@{A\+Dsensors.\+h}!read\+Right\+Wheel@{read\+Right\+Wheel}}
+\index{read\+Right\+Wheel@{read\+Right\+Wheel}!A\+Dsensors.\+h@{A\+Dsensors.\+h}}
+\subsubsection[{read\+Right\+Wheel}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short read\+Right\+Wheel (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_a_dsensors_8h_a02995de378d782efb12c895ad36d0dae}
+
+
+Gets right wheel sensor reading. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unsigned short
+\end{DoxyReturn}
+Sensor reading is returned as an unsigned short type. 

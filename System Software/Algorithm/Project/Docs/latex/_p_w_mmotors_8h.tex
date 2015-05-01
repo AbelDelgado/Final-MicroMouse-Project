@@ -1,0 +1,505 @@
+\hypertarget{_p_w_mmotors_8h}{}\section{Algorithims/\+P\+W\+Mmotors.h File Reference}
+\label{_p_w_mmotors_8h}\index{Algorithims/\+P\+W\+Mmotors.\+h@{Algorithims/\+P\+W\+Mmotors.\+h}}
+
+
+Motors interface.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_p_w_mmotors_8h_a229ea550b009916727d7e601895f0194}{}\#define {\bfseries next\+Square}~28\label{_p_w_mmotors_8h_a229ea550b009916727d7e601895f0194}
+
+\item 
+\hypertarget{_p_w_mmotors_8h_a65313b429162ae501cbeb7e3e90add69}{}\#define {\bfseries \+\_\+90\+D\+E\+G}~6\label{_p_w_mmotors_8h_a65313b429162ae501cbeb7e3e90add69}
+
+\item 
+\hypertarget{_p_w_mmotors_8h_a4153b7af29f9ca230f6780472a6c7bf4}{}\#define {\bfseries \+\_\+180\+D\+E\+G}~12\label{_p_w_mmotors_8h_a4153b7af29f9ca230f6780472a6c7bf4}
+
+\item 
+\hypertarget{_p_w_mmotors_8h_a20675d45b2b80435a405eabf8b0dcbe3}{}\#define {\bfseries Spd\+Adj\+Cnst}~1\label{_p_w_mmotors_8h_a20675d45b2b80435a405eabf8b0dcbe3}
+
+\item 
+\hypertarget{_p_w_mmotors_8h_a59355c6b1a7a19777aabd046cf89fa3d}{}\#define {\bfseries Turn\+Spd}~25\label{_p_w_mmotors_8h_a59355c6b1a7a19777aabd046cf89fa3d}
+
+\item 
+\hypertarget{_p_w_mmotors_8h_a18774c464d95cd2b255cbbd2095dcf6b}{}\#define {\bfseries Med\+Spd}~28\label{_p_w_mmotors_8h_a18774c464d95cd2b255cbbd2095dcf6b}
+
+\item 
+\hypertarget{_p_w_mmotors_8h_a620b779d1ce360f5acb418729d53a55e}{}\#define {\bfseries Max\+P\+W\+Mval}~200\label{_p_w_mmotors_8h_a620b779d1ce360f5acb418729d53a55e}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_p_w_mmotors_8h_a3e487a6ce029f4ef0f24c81f49d0c77d}{reset\+Counters} (void)
+\begin{DoxyCompactList}\small\item\em Reset pulse accummulators \& P\+W\+M count registers. \end{DoxyCompactList}\item 
+void \hyperlink{_p_w_mmotors_8h_ac37c999bf05d7777dc16b5f7de55b13a}{fwd\+Dir} (void)
+\begin{DoxyCompactList}\small\item\em Set motors direction to forward. \end{DoxyCompactList}\item 
+void \hyperlink{_p_w_mmotors_8h_aeb80bfd7ee76532f69c2fc63c2264eae}{reverse\+Dir} (void)
+\begin{DoxyCompactList}\small\item\em Set motors direction to reverse. \end{DoxyCompactList}\item 
+void \hyperlink{_p_w_mmotors_8h_ab8448042ba6e25c2a42dccebd83b9b55}{left\+Dir} (void)
+\begin{DoxyCompactList}\small\item\em Set motors direction to left. \end{DoxyCompactList}\item 
+void \hyperlink{_p_w_mmotors_8h_a7fa218c744cc0fd33cf568866f7c0e02}{right\+Dir} (void)
+\begin{DoxyCompactList}\small\item\em Set motors direction to right. \end{DoxyCompactList}\item 
+void \hyperlink{_p_w_mmotors_8h_abc64dd1366d278ec3f50319b9d7e0b48}{turn\+Speed} (void)
+\begin{DoxyCompactList}\small\item\em Set motors speed to turning speed. \end{DoxyCompactList}\item 
+void \hyperlink{_p_w_mmotors_8h_afebae5e0c384096fbdd9571eb049b8c9}{med\+Speed} (void)
+\begin{DoxyCompactList}\small\item\em Set motors speed to medium. \end{DoxyCompactList}\item 
+void \hyperlink{_p_w_mmotors_8h_af88be8af9e35f5b06aa65ce3dbe6527b}{idle\+Speed} (void)
+\begin{DoxyCompactList}\small\item\em Set motors speed to idle. \end{DoxyCompactList}\item 
+void \hyperlink{_p_w_mmotors_8h_aede7dbe7b8b164664028b48fb6dcb687}{adj\+Left} (void)
+\begin{DoxyCompactList}\small\item\em Increase right motor speed \& decrease left motor speed. \end{DoxyCompactList}\item 
+void \hyperlink{_p_w_mmotors_8h_a2f3b9d35094d8f3c41738e70fdc410c7}{adj\+Right} (void)
+\begin{DoxyCompactList}\small\item\em Increase left motor speed \& decrease right motor speed. \end{DoxyCompactList}\item 
+\hypertarget{_p_w_mmotors_8h_af0d42ea8bde1cb80de17562c6e07f0db}{}void {\bfseries show\+Registers} (void)\label{_p_w_mmotors_8h_af0d42ea8bde1cb80de17562c6e07f0db}
+
+\item 
+void \hyperlink{_p_w_mmotors_8h_a8b1f612a89d83a75fcd4575af4d1c4ad}{fwd} (void)
+\begin{DoxyCompactList}\small\item\em Start foward motion at medium speed on both motors. \end{DoxyCompactList}\item 
+void \hyperlink{_p_w_mmotors_8h_a9b9f707faef4e0295741fa2ceec968d1}{stop\+Bckp} (void)
+\begin{DoxyCompactList}\small\item\em Stop back-\/up motion on both motors. \end{DoxyCompactList}\item 
+void \hyperlink{_p_w_mmotors_8h_ab3da3334de92f82f4e5ff8ebe6a13471}{stop\+Fwd} (void)
+\begin{DoxyCompactList}\small\item\em Stop foward motion on both motors. \end{DoxyCompactList}\item 
+void \hyperlink{_p_w_mmotors_8h_af75d98fd997f0dcfc828709dd54e93f9}{slight\+Right} (void)
+\begin{DoxyCompactList}\small\item\em Turn right slightly. \end{DoxyCompactList}\item 
+void \hyperlink{_p_w_mmotors_8h_a613c5507b0c61ba2aaec6b9d4f54c710}{slight\+Left} (void)
+\begin{DoxyCompactList}\small\item\em Turn left slightly. \end{DoxyCompactList}\item 
+void \hyperlink{_p_w_mmotors_8h_ad4446b0cb16404890d982acf47323f16}{bckp} (void)
+\begin{DoxyCompactList}\small\item\em Starts back-\/up motion on both motors. \end{DoxyCompactList}\item 
+void \hyperlink{_p_w_mmotors_8h_a5c455f60ba68566bdc78a58fb0548009}{follow\+Wall} (void)
+\begin{DoxyCompactList}\small\item\em Uses left or right wall to align mouse movement. \end{DoxyCompactList}\item 
+void \hyperlink{_p_w_mmotors_8h_a61fbac53551796822a78d52ebbc6c210}{next\+Cell\+Go} (void)
+\begin{DoxyCompactList}\small\item\em Move foward to next cell. \end{DoxyCompactList}\item 
+void \hyperlink{_p_w_mmotors_8h_a6cbdd0302fc7ade760da4a9938a14e0c}{right\+Turn} (void)
+\begin{DoxyCompactList}\small\item\em 90 degree right turn \end{DoxyCompactList}\item 
+void \hyperlink{_p_w_mmotors_8h_a5acc7c432a69c4da2a42a3dd40b7abbc}{left\+Turn} (void)
+\begin{DoxyCompactList}\small\item\em 90 degree left turn \end{DoxyCompactList}\item 
+void \hyperlink{_p_w_mmotors_8h_af3612cf57c774f0d969df48c1e0acf5b}{turn180} (void)
+\begin{DoxyCompactList}\small\item\em Turn around. \end{DoxyCompactList}\item 
+\hypertarget{_p_w_mmotors_8h_a6e036adeec6590835b57b1a5e9b57129}{}void {\bfseries test\+Wheel\+Cntrs} (void)\label{_p_w_mmotors_8h_a6e036adeec6590835b57b1a5e9b57129}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_p_w_mmotors_8h_a1d7eba7ac14a5ec18657d57577252f88}{}unsigned short {\bfseries right\+Wheel\+Count}\label{_p_w_mmotors_8h_a1d7eba7ac14a5ec18657d57577252f88}
+
+\item 
+\hypertarget{_p_w_mmotors_8h_a53596c19989696af1931286f455cd95e}{}unsigned short {\bfseries left\+Wheel\+Count}\label{_p_w_mmotors_8h_a53596c19989696af1931286f455cd95e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Motors interface. 
+
+\begin{DoxyAuthor}{Author}
+Madzivire Chikwanda 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22 April 2015
+\end{DoxyDate}
+Methods for controling motors. The T\+I\+M\+E\+R module has to be initialized by calling \hyperlink{init_8h_a2858154e2009b0e6e616f313177762bc}{init()} , defined in \hyperlink{init_8h}{init.\+h}, before methods defined in this file can be called.
+
+The left motor is interfaced with P\+O\+R\+T B, P\+W\+M channel 4, \& left wheel encoder is interfaced to Pulse Accummulator A (P\+A\+C\+N32). The right motor is interfaced with P\+O\+R\+T A, P\+W\+M channel 5, \& left wheel encoder is interfaced to Pulse Accummulator B (P\+A\+C\+N10). 
+
+\subsection{Function Documentation}
+\hypertarget{_p_w_mmotors_8h_aede7dbe7b8b164664028b48fb6dcb687}{}\index{P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}!adj\+Left@{adj\+Left}}
+\index{adj\+Left@{adj\+Left}!P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}}
+\subsubsection[{adj\+Left}]{\setlength{\rightskip}{0pt plus 5cm}void adj\+Left (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_p_w_mmotors_8h_aede7dbe7b8b164664028b48fb6dcb687}
+
+
+Increase right motor speed \& decrease left motor speed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{_p_w_mmotors_8h_a2f3b9d35094d8f3c41738e70fdc410c7}{}\index{P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}!adj\+Right@{adj\+Right}}
+\index{adj\+Right@{adj\+Right}!P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}}
+\subsubsection[{adj\+Right}]{\setlength{\rightskip}{0pt plus 5cm}void adj\+Right (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_p_w_mmotors_8h_a2f3b9d35094d8f3c41738e70fdc410c7}
+
+
+Increase left motor speed \& decrease right motor speed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{_p_w_mmotors_8h_ad4446b0cb16404890d982acf47323f16}{}\index{P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}!bckp@{bckp}}
+\index{bckp@{bckp}!P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}}
+\subsubsection[{bckp}]{\setlength{\rightskip}{0pt plus 5cm}void bckp (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_p_w_mmotors_8h_ad4446b0cb16404890d982acf47323f16}
+
+
+Starts back-\/up motion on both motors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{_p_w_mmotors_8h_a5c455f60ba68566bdc78a58fb0548009}{}\index{P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}!follow\+Wall@{follow\+Wall}}
+\index{follow\+Wall@{follow\+Wall}!P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}}
+\subsubsection[{follow\+Wall}]{\setlength{\rightskip}{0pt plus 5cm}void follow\+Wall (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_p_w_mmotors_8h_a5c455f60ba68566bdc78a58fb0548009}
+
+
+Uses left or right wall to align mouse movement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+This method is supposed to keep the mouse parallel with a wall on either the left or right side. \hypertarget{_p_w_mmotors_8h_a8b1f612a89d83a75fcd4575af4d1c4ad}{}\index{P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}!fwd@{fwd}}
+\index{fwd@{fwd}!P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}}
+\subsubsection[{fwd}]{\setlength{\rightskip}{0pt plus 5cm}void fwd (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_p_w_mmotors_8h_a8b1f612a89d83a75fcd4575af4d1c4ad}
+
+
+Start foward motion at medium speed on both motors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{_p_w_mmotors_8h_ac37c999bf05d7777dc16b5f7de55b13a}{}\index{P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}!fwd\+Dir@{fwd\+Dir}}
+\index{fwd\+Dir@{fwd\+Dir}!P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}}
+\subsubsection[{fwd\+Dir}]{\setlength{\rightskip}{0pt plus 5cm}void fwd\+Dir (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_p_w_mmotors_8h_ac37c999bf05d7777dc16b5f7de55b13a}
+
+
+Set motors direction to forward. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{_p_w_mmotors_8h_af88be8af9e35f5b06aa65ce3dbe6527b}{}\index{P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}!idle\+Speed@{idle\+Speed}}
+\index{idle\+Speed@{idle\+Speed}!P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}}
+\subsubsection[{idle\+Speed}]{\setlength{\rightskip}{0pt plus 5cm}void idle\+Speed (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_p_w_mmotors_8h_af88be8af9e35f5b06aa65ce3dbe6527b}
+
+
+Set motors speed to idle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{_p_w_mmotors_8h_ab8448042ba6e25c2a42dccebd83b9b55}{}\index{P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}!left\+Dir@{left\+Dir}}
+\index{left\+Dir@{left\+Dir}!P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}}
+\subsubsection[{left\+Dir}]{\setlength{\rightskip}{0pt plus 5cm}void left\+Dir (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_p_w_mmotors_8h_ab8448042ba6e25c2a42dccebd83b9b55}
+
+
+Set motors direction to left. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{_p_w_mmotors_8h_a5acc7c432a69c4da2a42a3dd40b7abbc}{}\index{P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}!left\+Turn@{left\+Turn}}
+\index{left\+Turn@{left\+Turn}!P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}}
+\subsubsection[{left\+Turn}]{\setlength{\rightskip}{0pt plus 5cm}void left\+Turn (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_p_w_mmotors_8h_a5acc7c432a69c4da2a42a3dd40b7abbc}
+
+
+90 degree left turn 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{_p_w_mmotors_8h_afebae5e0c384096fbdd9571eb049b8c9}{}\index{P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}!med\+Speed@{med\+Speed}}
+\index{med\+Speed@{med\+Speed}!P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}}
+\subsubsection[{med\+Speed}]{\setlength{\rightskip}{0pt plus 5cm}void med\+Speed (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_p_w_mmotors_8h_afebae5e0c384096fbdd9571eb049b8c9}
+
+
+Set motors speed to medium. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{_p_w_mmotors_8h_a61fbac53551796822a78d52ebbc6c210}{}\index{P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}!next\+Cell\+Go@{next\+Cell\+Go}}
+\index{next\+Cell\+Go@{next\+Cell\+Go}!P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}}
+\subsubsection[{next\+Cell\+Go}]{\setlength{\rightskip}{0pt plus 5cm}void next\+Cell\+Go (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_p_w_mmotors_8h_a61fbac53551796822a78d52ebbc6c210}
+
+
+Move foward to next cell. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{_p_w_mmotors_8h_a3e487a6ce029f4ef0f24c81f49d0c77d}{}\index{P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}!reset\+Counters@{reset\+Counters}}
+\index{reset\+Counters@{reset\+Counters}!P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}}
+\subsubsection[{reset\+Counters}]{\setlength{\rightskip}{0pt plus 5cm}void reset\+Counters (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_p_w_mmotors_8h_a3e487a6ce029f4ef0f24c81f49d0c77d}
+
+
+Reset pulse accummulators \& P\+W\+M count registers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{_p_w_mmotors_8h_aeb80bfd7ee76532f69c2fc63c2264eae}{}\index{P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}!reverse\+Dir@{reverse\+Dir}}
+\index{reverse\+Dir@{reverse\+Dir}!P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}}
+\subsubsection[{reverse\+Dir}]{\setlength{\rightskip}{0pt plus 5cm}void reverse\+Dir (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_p_w_mmotors_8h_aeb80bfd7ee76532f69c2fc63c2264eae}
+
+
+Set motors direction to reverse. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{_p_w_mmotors_8h_a7fa218c744cc0fd33cf568866f7c0e02}{}\index{P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}!right\+Dir@{right\+Dir}}
+\index{right\+Dir@{right\+Dir}!P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}}
+\subsubsection[{right\+Dir}]{\setlength{\rightskip}{0pt plus 5cm}void right\+Dir (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_p_w_mmotors_8h_a7fa218c744cc0fd33cf568866f7c0e02}
+
+
+Set motors direction to right. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{_p_w_mmotors_8h_a6cbdd0302fc7ade760da4a9938a14e0c}{}\index{P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}!right\+Turn@{right\+Turn}}
+\index{right\+Turn@{right\+Turn}!P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}}
+\subsubsection[{right\+Turn}]{\setlength{\rightskip}{0pt plus 5cm}void right\+Turn (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_p_w_mmotors_8h_a6cbdd0302fc7ade760da4a9938a14e0c}
+
+
+90 degree right turn 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{_p_w_mmotors_8h_a613c5507b0c61ba2aaec6b9d4f54c710}{}\index{P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}!slight\+Left@{slight\+Left}}
+\index{slight\+Left@{slight\+Left}!P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}}
+\subsubsection[{slight\+Left}]{\setlength{\rightskip}{0pt plus 5cm}void slight\+Left (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_p_w_mmotors_8h_a613c5507b0c61ba2aaec6b9d4f54c710}
+
+
+Turn left slightly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Right alignment sensor or left wall sensor must be reading O\+F\+F. \hypertarget{_p_w_mmotors_8h_af75d98fd997f0dcfc828709dd54e93f9}{}\index{P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}!slight\+Right@{slight\+Right}}
+\index{slight\+Right@{slight\+Right}!P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}}
+\subsubsection[{slight\+Right}]{\setlength{\rightskip}{0pt plus 5cm}void slight\+Right (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_p_w_mmotors_8h_af75d98fd997f0dcfc828709dd54e93f9}
+
+
+Turn right slightly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Left alignment sensor or right wall sensor must be reading O\+F\+F. \hypertarget{_p_w_mmotors_8h_a9b9f707faef4e0295741fa2ceec968d1}{}\index{P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}!stop\+Bckp@{stop\+Bckp}}
+\index{stop\+Bckp@{stop\+Bckp}!P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}}
+\subsubsection[{stop\+Bckp}]{\setlength{\rightskip}{0pt plus 5cm}void stop\+Bckp (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_p_w_mmotors_8h_a9b9f707faef4e0295741fa2ceec968d1}
+
+
+Stop back-\/up motion on both motors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{_p_w_mmotors_8h_ab3da3334de92f82f4e5ff8ebe6a13471}{}\index{P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}!stop\+Fwd@{stop\+Fwd}}
+\index{stop\+Fwd@{stop\+Fwd}!P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}}
+\subsubsection[{stop\+Fwd}]{\setlength{\rightskip}{0pt plus 5cm}void stop\+Fwd (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_p_w_mmotors_8h_ab3da3334de92f82f4e5ff8ebe6a13471}
+
+
+Stop foward motion on both motors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{_p_w_mmotors_8h_af3612cf57c774f0d969df48c1e0acf5b}{}\index{P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}!turn180@{turn180}}
+\index{turn180@{turn180}!P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}}
+\subsubsection[{turn180}]{\setlength{\rightskip}{0pt plus 5cm}void turn180 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_p_w_mmotors_8h_af3612cf57c774f0d969df48c1e0acf5b}
+
+
+Turn around. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{_p_w_mmotors_8h_abc64dd1366d278ec3f50319b9d7e0b48}{}\index{P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}!turn\+Speed@{turn\+Speed}}
+\index{turn\+Speed@{turn\+Speed}!P\+W\+Mmotors.\+h@{P\+W\+Mmotors.\+h}}
+\subsubsection[{turn\+Speed}]{\setlength{\rightskip}{0pt plus 5cm}void turn\+Speed (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_p_w_mmotors_8h_abc64dd1366d278ec3f50319b9d7e0b48}
+
+
+Set motors speed to turning speed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}

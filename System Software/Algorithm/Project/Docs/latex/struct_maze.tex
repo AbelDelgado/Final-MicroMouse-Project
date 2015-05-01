@@ -1,0 +1,73 @@
+\hypertarget{struct_maze}{}\section{Maze Struct Reference}
+\label{struct_maze}\index{Maze@{Maze}}
+
+
+\hyperlink{struct_maze}{Maze} structure instance.  
+
+
+
+
+{\ttfamily \#include $<$maze.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+boolean \hyperlink{struct_maze_a0b1e65db462f021fc50daaea40d51037}{vertical\+Walls} \mbox{[}R\+O\+W\+S\mbox{]}\mbox{[}C\+O\+L\+U\+M\+N\+S+1\mbox{]}
+\item 
+boolean \hyperlink{struct_maze_a5e6e52f4614a45d6f0ab0f43af9b8291}{horizontal\+Walls} \mbox{[}R\+O\+W\+S+1\mbox{]}\mbox{[}C\+O\+L\+U\+M\+N\+S\mbox{]}
+\item 
+short \hyperlink{struct_maze_a9755fe6553e3536eb0e84a8c21a3957e}{values} \mbox{[}R\+O\+W\+S\mbox{]}\mbox{[}C\+O\+L\+U\+M\+N\+S\mbox{]}
+\item 
+\hypertarget{struct_maze_aafa7c598fd27aff11ab2cbd777771934}{}struct \hyperlink{struct_cell}{Cell} {\bfseries cell} \mbox{[}R\+O\+W\+S\mbox{]}\mbox{[}C\+O\+L\+U\+M\+N\+S\mbox{]}\label{struct_maze_aafa7c598fd27aff11ab2cbd777771934}
+
+\item 
+short \hyperlink{struct_maze_a25fbdad541be1fc5c7d6f24cd5affb32}{mouse\+Row}
+\item 
+short \hyperlink{struct_maze_aff431e9c6fe8a138320e2b32f8160ae7}{mouse\+Column}
+\item 
+short \hyperlink{struct_maze_a06eb34bb9132c0dc618cbea56484e4f9}{mouse\+Heading}
+\item 
+short \hyperlink{struct_maze_a1458fbf99b584cba92836ab88ee6f8a5}{target\+Row}
+\item 
+short \hyperlink{struct_maze_a9766593afcd1e7190fa595580d22c361}{target\+Column}
+\item 
+boolean \hyperlink{struct_maze_ac252030149db173cf7a0e623f7d1552a}{map\+Complete}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{struct_maze}{Maze} structure instance. 
+
+\subsection{Field Documentation}
+\hypertarget{struct_maze_a5e6e52f4614a45d6f0ab0f43af9b8291}{}\index{Maze@{Maze}!horizontal\+Walls@{horizontal\+Walls}}
+\index{horizontal\+Walls@{horizontal\+Walls}!Maze@{Maze}}
+\subsubsection[{horizontal\+Walls}]{\setlength{\rightskip}{0pt plus 5cm}boolean horizontal\+Walls\mbox{[}R\+O\+W\+S+1\mbox{]}\mbox{[}C\+O\+L\+U\+M\+N\+S\mbox{]}}\label{struct_maze_a5e6e52f4614a45d6f0ab0f43af9b8291}
+Horizontal, (x-\/axis), walls array. \hypertarget{struct_maze_ac252030149db173cf7a0e623f7d1552a}{}\index{Maze@{Maze}!map\+Complete@{map\+Complete}}
+\index{map\+Complete@{map\+Complete}!Maze@{Maze}}
+\subsubsection[{map\+Complete}]{\setlength{\rightskip}{0pt plus 5cm}boolean map\+Complete}\label{struct_maze_ac252030149db173cf7a0e623f7d1552a}
+\hyperlink{struct_maze}{Maze} mapping complete flag. \hypertarget{struct_maze_aff431e9c6fe8a138320e2b32f8160ae7}{}\index{Maze@{Maze}!mouse\+Column@{mouse\+Column}}
+\index{mouse\+Column@{mouse\+Column}!Maze@{Maze}}
+\subsubsection[{mouse\+Column}]{\setlength{\rightskip}{0pt plus 5cm}short mouse\+Column}\label{struct_maze_aff431e9c6fe8a138320e2b32f8160ae7}
+Column number of the cell occupied by the mouse. \hypertarget{struct_maze_a06eb34bb9132c0dc618cbea56484e4f9}{}\index{Maze@{Maze}!mouse\+Heading@{mouse\+Heading}}
+\index{mouse\+Heading@{mouse\+Heading}!Maze@{Maze}}
+\subsubsection[{mouse\+Heading}]{\setlength{\rightskip}{0pt plus 5cm}short mouse\+Heading}\label{struct_maze_a06eb34bb9132c0dc618cbea56484e4f9}
+The direction the mouse is facing/heading. \hypertarget{struct_maze_a25fbdad541be1fc5c7d6f24cd5affb32}{}\index{Maze@{Maze}!mouse\+Row@{mouse\+Row}}
+\index{mouse\+Row@{mouse\+Row}!Maze@{Maze}}
+\subsubsection[{mouse\+Row}]{\setlength{\rightskip}{0pt plus 5cm}short mouse\+Row}\label{struct_maze_a25fbdad541be1fc5c7d6f24cd5affb32}
+Row number of the cell occupied by the mouse. \hypertarget{struct_maze_a9766593afcd1e7190fa595580d22c361}{}\index{Maze@{Maze}!target\+Column@{target\+Column}}
+\index{target\+Column@{target\+Column}!Maze@{Maze}}
+\subsubsection[{target\+Column}]{\setlength{\rightskip}{0pt plus 5cm}short target\+Column}\label{struct_maze_a9766593afcd1e7190fa595580d22c361}
+Column number of the solution cell. \hypertarget{struct_maze_a1458fbf99b584cba92836ab88ee6f8a5}{}\index{Maze@{Maze}!target\+Row@{target\+Row}}
+\index{target\+Row@{target\+Row}!Maze@{Maze}}
+\subsubsection[{target\+Row}]{\setlength{\rightskip}{0pt plus 5cm}short target\+Row}\label{struct_maze_a1458fbf99b584cba92836ab88ee6f8a5}
+Row number of the solution cell. \hypertarget{struct_maze_a9755fe6553e3536eb0e84a8c21a3957e}{}\index{Maze@{Maze}!values@{values}}
+\index{values@{values}!Maze@{Maze}}
+\subsubsection[{values}]{\setlength{\rightskip}{0pt plus 5cm}short values\mbox{[}R\+O\+W\+S\mbox{]}\mbox{[}C\+O\+L\+U\+M\+N\+S\mbox{]}}\label{struct_maze_a9755fe6553e3536eb0e84a8c21a3957e}
+\hyperlink{struct_cell}{Cell} Flood-\/\+Fill values array. \hypertarget{struct_maze_a0b1e65db462f021fc50daaea40d51037}{}\index{Maze@{Maze}!vertical\+Walls@{vertical\+Walls}}
+\index{vertical\+Walls@{vertical\+Walls}!Maze@{Maze}}
+\subsubsection[{vertical\+Walls}]{\setlength{\rightskip}{0pt plus 5cm}boolean vertical\+Walls\mbox{[}R\+O\+W\+S\mbox{]}\mbox{[}C\+O\+L\+U\+M\+N\+S+1\mbox{]}}\label{struct_maze_a0b1e65db462f021fc50daaea40d51037}
+Vertical, (y-\/axis), walls array. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Algorithims/\hyperlink{maze_8h}{maze.\+h}\end{DoxyCompactItemize}

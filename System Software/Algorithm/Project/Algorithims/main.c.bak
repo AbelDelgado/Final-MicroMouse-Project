@@ -1,0 +1,105 @@
+/** 
+ *  @file main.c
+ *  @brief Entry point for the HCS12 maze application.
+ *  @author Madzivire Chikwanda
+ *  @bugs This implementation was not completely tested.
+ *  @date 22 April 2015
+ * 
+ *  Calls to methods in main_asm.h, init.h, ADsensors.h, PWMmotors.h, & maze.h to solve a maze
+ *  are made here.
+ *  	- a call to init() has to be made before any call to scanWalls(), turnToBestNeighbor(), or 
+ *  	  any other methods in PWMmotors.h, or ADsensors.h
+ *  	- the Maze struct has to be initialiazed by calling the initMaze() method before any other
+ *  	  calls to methods in maze.h 
+ */
+
+/* -------------------- Defines --------------------  */
+
+#define _4mSec    1	// delay constants
+#define _24mSec   4
+#define _100mSec  25
+#define _200mSec  50
+#define _500mSec  125
+#define _1Sec     250
+#define _2Sec     500
+#define _5Sec     1250
+#define _10Sec    2500
+
+#include "mc9s12dp256.h"
+#include "derivative.h"
+#include "main_asm.h"
+#include "DBug12.h"
+#include "init.h"
+#include "ADsensors.h"
+#include "maze.h"
+#include "PWMmotors.h"
+
+#define OFF     (PORTAD0_PTAD0 == 0)		// PORTA-pin0 ==> low/OFF high/ON
+
+
+/**
+ *  @brief Scans & adds walls to maze map.
+ *  @param void
+ *  @return void
+ */
+void scanWalls (void)
+{
+   if(sensorOn(readFrontSensor()))	
+      addWall(newMaze.mouseHeading);
+
+
+   if(sensorOn(readRightWall()))
+      addWall((newMaze.mouseHeading + 1) % 4);
+
+   if(sensorOn(readLeftWall()))
+      addWall((newMaze.mouseHeading + 3) % 4);
+} 
+
+/**
+ *  @brief Turns mouse to face a disired direction.
+ *  @param unsigned short
+ *  @return void
+ *
+ *  The input parameter is direction is mapped as follows:
+ *  -> 1 <==> NORTH
+ *  -> 2 <==> EAST
+ *  -> 3 <==> SOUTH
+ *  -> 4 <==> WEST
+ */
+void turnToBestNeighbor (unsigned short desiredDirection)
+{
+   signed short difference;
+
+   difference = newMaze.mouseHeading - desiredDirection;
+
+   if (difference == -3 || difference == 1)
+      leftTurn();
+
+   else if (difference == -1 || difference == 3)
+      rightTurn();
+
+   else if (difference == -2 || difference == 2)
+      turn180();
+
+   newMaze.mouseHeading = desiredDirection;
+}
+
+
+void main(void)
+{
+
+
+   init();
+
+   while(OFF){}
+   delay(_2Sec);
+
+   //testWheelCntrs();
+   //  fwd();
+   nextCellGo();
+   //showSensors();
+   //slightRight();
+   //slightLeft();
+
+   asm("swi");
+}

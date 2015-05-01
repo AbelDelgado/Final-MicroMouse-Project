@@ -1,0 +1,121 @@
+\hypertarget{main_8c}{}\section{Algorithims/main.c File Reference}
+\label{main_8c}\index{Algorithims/main.\+c@{Algorithims/main.\+c}}
+
+
+Entry point for the H\+C\+S12 maze application.  
+
+
+{\ttfamily \#include \char`\"{}mc9s12dp256.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}derivative.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}main\+\_\+asm.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}D\+Bug12.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}init.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\+Dsensors.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}maze.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}P\+W\+Mmotors.\+h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{main_8c_aebda959936c22a51c32307d52cc4413d}{}\#define {\bfseries \+\_\+4m\+Sec}~1\label{main_8c_aebda959936c22a51c32307d52cc4413d}
+
+\item 
+\hypertarget{main_8c_a693141f70c962cd245221a7a70e40143}{}\#define {\bfseries \+\_\+24m\+Sec}~4\label{main_8c_a693141f70c962cd245221a7a70e40143}
+
+\item 
+\hypertarget{main_8c_a5d7ba31fa10929818d824b2b02d23321}{}\#define {\bfseries \+\_\+100m\+Sec}~25\label{main_8c_a5d7ba31fa10929818d824b2b02d23321}
+
+\item 
+\hypertarget{main_8c_a23b0233978a7d47573f2288b8f90edca}{}\#define {\bfseries \+\_\+200m\+Sec}~50\label{main_8c_a23b0233978a7d47573f2288b8f90edca}
+
+\item 
+\hypertarget{main_8c_a96aa648896eed93afa82d1ee7b295d14}{}\#define {\bfseries \+\_\+500m\+Sec}~125\label{main_8c_a96aa648896eed93afa82d1ee7b295d14}
+
+\item 
+\hypertarget{main_8c_ac63182f2a95b2ef1343d2a73eb699915}{}\#define {\bfseries \+\_\+1\+Sec}~250\label{main_8c_ac63182f2a95b2ef1343d2a73eb699915}
+
+\item 
+\hypertarget{main_8c_a2b005ed2d354c97c9e4113783a8f5f70}{}\#define {\bfseries \+\_\+2\+Sec}~500\label{main_8c_a2b005ed2d354c97c9e4113783a8f5f70}
+
+\item 
+\hypertarget{main_8c_a29e4a53e520fbd93120fe012d6054fc6}{}\#define {\bfseries \+\_\+5\+Sec}~1250\label{main_8c_a29e4a53e520fbd93120fe012d6054fc6}
+
+\item 
+\hypertarget{main_8c_af304dd5dff9967c18f27a392f5b27898}{}\#define {\bfseries \+\_\+10\+Sec}~2500\label{main_8c_af304dd5dff9967c18f27a392f5b27898}
+
+\item 
+\hypertarget{main_8c_a29e413f6725b2ba32d165ffaa35b01e5}{}\#define {\bfseries O\+F\+F}~(P\+O\+R\+T\+A\+D0\+\_\+\+P\+T\+A\+D0 == 0)\label{main_8c_a29e413f6725b2ba32d165ffaa35b01e5}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{main_8c_a57b046b451a4eea21c6da09bd41c99e6}{scan\+Walls} (void)
+\begin{DoxyCompactList}\small\item\em Scans \& adds walls to maze map. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_ad0be39085f55163bbdc5041ddb4c8b24}{turn\+To\+Best\+Neighbor} (unsigned short desired\+Direction)
+\begin{DoxyCompactList}\small\item\em Turns mouse to face a disired direction. \end{DoxyCompactList}\item 
+\hypertarget{main_8c_a6288eba0f8e8ad3ab1544ad731eb7667}{}void {\bfseries main} (void)\label{main_8c_a6288eba0f8e8ad3ab1544ad731eb7667}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Entry point for the H\+C\+S12 maze application. 
+
+\begin{DoxyAuthor}{Author}
+Madzivire Chikwanda  This implementation was not completely tested. 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22 April 2015
+\end{DoxyDate}
+Calls to methods in \hyperlink{main__asm_8h_source}{main\+\_\+asm.\+h}, \hyperlink{init_8h}{init.\+h}, \hyperlink{_a_dsensors_8h}{A\+Dsensors.\+h}, \hyperlink{_p_w_mmotors_8h}{P\+W\+Mmotors.\+h}, \& \hyperlink{maze_8h}{maze.\+h} to solve a maze are made here.
+\begin{DoxyItemize}
+\item a call to \hyperlink{init_8h_a2858154e2009b0e6e616f313177762bc}{init()} has to be made before any call to \hyperlink{main_8c_a57b046b451a4eea21c6da09bd41c99e6}{scan\+Walls()}, \hyperlink{main_8c_ad0be39085f55163bbdc5041ddb4c8b24}{turn\+To\+Best\+Neighbor()}, or any other methods in \hyperlink{_p_w_mmotors_8h}{P\+W\+Mmotors.\+h}, or \hyperlink{_a_dsensors_8h}{A\+Dsensors.\+h}
+\item the \hyperlink{struct_maze}{Maze} struct has to be initialiazed by calling the \hyperlink{maze_8h_a31c12e8f95fd2a6bdc9cb4c371ea5043}{init\+Maze()} method before any other calls to methods in \hyperlink{maze_8h}{maze.\+h} 
+\end{DoxyItemize}
+
+\subsection{Function Documentation}
+\hypertarget{main_8c_a57b046b451a4eea21c6da09bd41c99e6}{}\index{main.\+c@{main.\+c}!scan\+Walls@{scan\+Walls}}
+\index{scan\+Walls@{scan\+Walls}!main.\+c@{main.\+c}}
+\subsubsection[{scan\+Walls}]{\setlength{\rightskip}{0pt plus 5cm}void scan\+Walls (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{main_8c_a57b046b451a4eea21c6da09bd41c99e6}
+
+
+Scans \& adds walls to maze map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{main_8c_ad0be39085f55163bbdc5041ddb4c8b24}{}\index{main.\+c@{main.\+c}!turn\+To\+Best\+Neighbor@{turn\+To\+Best\+Neighbor}}
+\index{turn\+To\+Best\+Neighbor@{turn\+To\+Best\+Neighbor}!main.\+c@{main.\+c}}
+\subsubsection[{turn\+To\+Best\+Neighbor}]{\setlength{\rightskip}{0pt plus 5cm}void turn\+To\+Best\+Neighbor (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{desired\+Direction}
+\end{DoxyParamCaption}
+)}\label{main_8c_ad0be39085f55163bbdc5041ddb4c8b24}
+
+
+Turns mouse to face a disired direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unsigned} & short \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+The input parameter is direction \& is mapped as follows\+:
+\begin{DoxyItemize}
+\item 1 == N\+O\+R\+T\+H
+\item 2 == E\+A\+S\+T
+\item 3 == S\+O\+U\+T\+H
+\item 4 == W\+E\+S\+T 
+\end{DoxyItemize}

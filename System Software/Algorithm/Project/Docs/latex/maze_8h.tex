@@ -1,0 +1,251 @@
+\hypertarget{maze_8h}{}\section{Algorithims/maze.h File Reference}
+\label{maze_8h}\index{Algorithims/maze.\+h@{Algorithims/maze.\+h}}
+
+
+\hyperlink{struct_maze}{Maze} application -\/ uses Flood Fill Algorithm to solve a maze.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_cell}{Cell}
+\begin{DoxyCompactList}\small\item\em \hyperlink{struct_cell}{Cell} structure representing a square on the maze. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_maze}{Maze}
+\begin{DoxyCompactList}\small\item\em \hyperlink{struct_maze}{Maze} structure instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{maze_8h_a1711232abf72723b5216c206e6bbb175}{}\#define {\bfseries N\+O\+R\+T\+H}~0\label{maze_8h_a1711232abf72723b5216c206e6bbb175}
+
+\item 
+\hypertarget{maze_8h_a072a1ef1143314441742097b799be322}{}\#define {\bfseries E\+A\+S\+T}~1\label{maze_8h_a072a1ef1143314441742097b799be322}
+
+\item 
+\hypertarget{maze_8h_af3830320fe6287f717dca9669f417950}{}\#define {\bfseries S\+O\+U\+T\+H}~2\label{maze_8h_af3830320fe6287f717dca9669f417950}
+
+\item 
+\hypertarget{maze_8h_a755da365a2f771fdb9e15af22fee7d74}{}\#define {\bfseries W\+E\+S\+T}~3\label{maze_8h_a755da365a2f771fdb9e15af22fee7d74}
+
+\item 
+\hypertarget{maze_8h_ac1ae4add974b9cfc6b5aaf8a578f01ab}{}\#define {\bfseries U\+N\+K\+N\+O\+W\+N}~255\label{maze_8h_ac1ae4add974b9cfc6b5aaf8a578f01ab}
+
+\item 
+\hypertarget{maze_8h_a3cfd3aa62338d12609f6d65bce97e9cd}{}\#define {\bfseries R\+O\+W\+S}~4\label{maze_8h_a3cfd3aa62338d12609f6d65bce97e9cd}
+
+\item 
+\hypertarget{maze_8h_a06c6c391fc11d106e9909f0401b255b1}{}\#define {\bfseries C\+O\+L\+U\+M\+N\+S}~3\label{maze_8h_a06c6c391fc11d106e9909f0401b255b1}
+
+\item 
+\hypertarget{maze_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{}\#define {\bfseries T\+R\+U\+E}~1\label{maze_8h_aa8cecfc5c5c054d2875c03e77b7be15d}
+
+\item 
+\hypertarget{maze_8h_aa93f0eb578d23995850d61f7d61c55c1}{}\#define {\bfseries F\+A\+L\+S\+E}~0\label{maze_8h_aa93f0eb578d23995850d61f7d61c55c1}
+
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{maze_8h_a0b1db574cdf1547ccfdb3bea1d94aa58}{}typedef unsigned short {\bfseries boolean}\label{maze_8h_a0b1db574cdf1547ccfdb3bea1d94aa58}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{maze_8h_ae8bc59e1ad47c25d2a9924d651507aef}{add\+Wall} (unsigned short direction)
+\begin{DoxyCompactList}\small\item\em Adds a wall to the maze. \end{DoxyCompactList}\item 
+void \hyperlink{maze_8h_a18b03dc1b969c510fb64e7c9a1fc6da0}{add\+Virtual\+Walls} (void)
+\item 
+void \hyperlink{maze_8h_a31c12e8f95fd2a6bdc9cb4c371ea5043}{init\+Maze} (void)
+\begin{DoxyCompactList}\small\item\em Initializes maze structure. \end{DoxyCompactList}\item 
+void \hyperlink{maze_8h_a7e8442e7139d840c15bdee83789f7ae8}{print} (void)
+\begin{DoxyCompactList}\small\item\em Prints a maze on terminal. \end{DoxyCompactList}\item 
+void \hyperlink{maze_8h_ab5d50ffbd0665b2ea0c9c86ae66729e4}{solve\+Maze} (void)
+\begin{DoxyCompactList}\small\item\em Applies a Flood-\/\+Fill algorithim to the maze structure. \end{DoxyCompactList}\item 
+unsigned short \hyperlink{maze_8h_acdbbbf6d7dc8959ea78f8b91cf984a1f}{get\+Best\+Neighbor} (void)
+\begin{DoxyCompactList}\small\item\em Polls neighboring cells to find the best cell. \end{DoxyCompactList}\item 
+void \hyperlink{maze_8h_a6165b04e28062b7d3c0dc95845497306}{next\+Cell} (void)
+\begin{DoxyCompactList}\small\item\em Updates mouse position coordinates to one cell forward. \end{DoxyCompactList}\item 
+\hypertarget{maze_8h_a94621b1b755657b729e4780fd48b4da5}{}unsigned short {\bfseries get\+Unexplored\+Cell} (void)\label{maze_8h_a94621b1b755657b729e4780fd48b4da5}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const short \hyperlink{maze_8h_adf19871619a91b216b1fabf48871d14c}{neighbor\+Cells} \mbox{[}4\mbox{]}\mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em 2x4 Array containing coordinates for neigboring cells. \end{DoxyCompactList}\item 
+const short {\bfseries neighbor\+Walls} \mbox{[}4\mbox{]}\mbox{[}2\mbox{]}
+\item 
+\hypertarget{maze_8h_a517aa8fdc4f90788d88f7939b985ae82}{}struct \hyperlink{struct_maze}{Maze} {\bfseries new\+Maze}\label{maze_8h_a517aa8fdc4f90788d88f7939b985ae82}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{struct_maze}{Maze} application -\/ uses Flood Fill Algorithm to solve a maze. 
+
+\begin{DoxyAuthor}{Author}
+Madzivire Chikwanda  No known bugs. 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+21 March 2015
+\end{DoxyDate}
+This a C adaptation for the H\+C\+S12 microcontroler of Maze.\+class posted on the Udemy website for the online class\textquotesingle{}Artificial Intelligence with Arduino.\textquotesingle{}
+
+The application simulates a maze which is mapped and solve by a \textquotesingle{}mouse.\textquotesingle{} Each square on the maze is refered to as cell, walls along the y-\/axis are considered horizontal, and walls along the x-\/axis are vertical. \hyperlink{struct_maze}{Maze} size is is defined by the R\+O\+W\+S \& C\+O\+L\+U\+M\+N\+S macros.
+
+The maze is solved by using a flood-\/fill algorithm to map and find a path to the Target \hyperlink{struct_cell}{Cell}.
+
+\begin{DoxySeeAlso}{See also}
+\href{https://www.udemy.com/nanomouse/}{\tt https\+://www.\+udemy.\+com/nanomouse/} 
+\end{DoxySeeAlso}
+
+
+\subsection{Function Documentation}
+\hypertarget{maze_8h_a18b03dc1b969c510fb64e7c9a1fc6da0}{}\index{maze.\+h@{maze.\+h}!add\+Virtual\+Walls@{add\+Virtual\+Walls}}
+\index{add\+Virtual\+Walls@{add\+Virtual\+Walls}!maze.\+h@{maze.\+h}}
+\subsubsection[{add\+Virtual\+Walls}]{\setlength{\rightskip}{0pt plus 5cm}void add\+Virtual\+Walls (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{maze_8h_a18b03dc1b969c510fb64e7c9a1fc6da0}
+Add walls to maze cells \hypertarget{maze_8h_ae8bc59e1ad47c25d2a9924d651507aef}{}\index{maze.\+h@{maze.\+h}!add\+Wall@{add\+Wall}}
+\index{add\+Wall@{add\+Wall}!maze.\+h@{maze.\+h}}
+\subsubsection[{add\+Wall}]{\setlength{\rightskip}{0pt plus 5cm}void add\+Wall (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{direction}
+\end{DoxyParamCaption}
+)}\label{maze_8h_ae8bc59e1ad47c25d2a9924d651507aef}
+
+
+Adds a wall to the maze. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unsigned} & short \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+The input parameter is the direction of the wall relative to the mouse. The direction, N\+O\+R\+T\+H, E\+A\+S\+T, S\+O\+U\+T\+H, or W\+E\+S\+T, is expressed as an unsigned short. \hypertarget{maze_8h_acdbbbf6d7dc8959ea78f8b91cf984a1f}{}\index{maze.\+h@{maze.\+h}!get\+Best\+Neighbor@{get\+Best\+Neighbor}}
+\index{get\+Best\+Neighbor@{get\+Best\+Neighbor}!maze.\+h@{maze.\+h}}
+\subsubsection[{get\+Best\+Neighbor}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short get\+Best\+Neighbor (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{maze_8h_acdbbbf6d7dc8959ea78f8b91cf984a1f}
+
+
+Polls neighboring cells to find the best cell. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unsigned short
+\end{DoxyReturn}
+Searches all cells neighboring the mouse\textquotesingle{}s current cell to find the best cell to move to. The return value reperesents direction of the best cell. \hypertarget{maze_8h_a31c12e8f95fd2a6bdc9cb4c371ea5043}{}\index{maze.\+h@{maze.\+h}!init\+Maze@{init\+Maze}}
+\index{init\+Maze@{init\+Maze}!maze.\+h@{maze.\+h}}
+\subsubsection[{init\+Maze}]{\setlength{\rightskip}{0pt plus 5cm}void init\+Maze (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{maze_8h_a31c12e8f95fd2a6bdc9cb4c371ea5043}
+
+
+Initializes maze structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+{\em void} & Sets the initial mouse position \& heading on the maze \& target cell. Exterior walls are also \\
+\hline
+\end{DoxyParams}
+\hypertarget{maze_8h_a6165b04e28062b7d3c0dc95845497306}{}\index{maze.\+h@{maze.\+h}!next\+Cell@{next\+Cell}}
+\index{next\+Cell@{next\+Cell}!maze.\+h@{maze.\+h}}
+\subsubsection[{next\+Cell}]{\setlength{\rightskip}{0pt plus 5cm}void next\+Cell (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{maze_8h_a6165b04e28062b7d3c0dc95845497306}
+
+
+Updates mouse position coordinates to one cell forward. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{maze_8h_a7e8442e7139d840c15bdee83789f7ae8}{}\index{maze.\+h@{maze.\+h}!print@{print}}
+\index{print@{print}!maze.\+h@{maze.\+h}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}void print (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{maze_8h_a7e8442e7139d840c15bdee83789f7ae8}
+
+
+Prints a maze on terminal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{maze_8h_ab5d50ffbd0665b2ea0c9c86ae66729e4}{}\index{maze.\+h@{maze.\+h}!solve\+Maze@{solve\+Maze}}
+\index{solve\+Maze@{solve\+Maze}!maze.\+h@{maze.\+h}}
+\subsubsection[{solve\+Maze}]{\setlength{\rightskip}{0pt plus 5cm}void solve\+Maze (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{maze_8h_ab5d50ffbd0665b2ea0c9c86ae66729e4}
+
+
+Applies a Flood-\/\+Fill algorithim to the maze structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Applies a Flood-\/\+Fill technique to all maze cells inorder to find a path to the target cell. 
+
+\subsection{Variable Documentation}
+\hypertarget{maze_8h_adf19871619a91b216b1fabf48871d14c}{}\index{maze.\+h@{maze.\+h}!neighbor\+Cells@{neighbor\+Cells}}
+\index{neighbor\+Cells@{neighbor\+Cells}!maze.\+h@{maze.\+h}}
+\subsubsection[{neighbor\+Cells}]{\setlength{\rightskip}{0pt plus 5cm}const short neighbor\+Cells\mbox{[}4\mbox{]}\mbox{[}2\mbox{]}}\label{maze_8h_adf19871619a91b216b1fabf48871d14c}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+   \{-1,0\},     
+   \{0,1\},      
+   \{1,0\},      
+   \{0,-1\}      
+\}
+\end{DoxyCode}
+
+
+2x4 Array containing coordinates for neigboring cells. 
+
+\hypertarget{maze_8h_a121322865a7c75467d316879ed90b09a}{}\index{maze.\+h@{maze.\+h}!neighbor\+Walls@{neighbor\+Walls}}
+\index{neighbor\+Walls@{neighbor\+Walls}!maze.\+h@{maze.\+h}}
+\subsubsection[{neighbor\+Walls}]{\setlength{\rightskip}{0pt plus 5cm}const short neighbor\+Walls\mbox{[}4\mbox{]}\mbox{[}2\mbox{]}}\label{maze_8h_a121322865a7c75467d316879ed90b09a}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{ 
+   \{0,0\},   
+   \{0,1\},   
+   \{1,0\},   
+   \{0,0\}        
+\}
+\end{DoxyCode}

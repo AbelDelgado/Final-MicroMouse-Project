@@ -1,0 +1,55 @@
+/** 
+ *  @file ADsensors.h
+ *  @brief Interface for A/D sensors.
+ *  @author Madzivire Chikwanda
+ *  @date 22 April 2015
+ *
+ *  Methods for reading sensor values. The A/D module has to be initialized by calling
+ *  init() , defineed in init.h, before methods defined in this file can be called.
+ */
+
+
+#define sensorOn(sensorRead)  ((sensorRead) < (0x20) ? (1) : (0))   // check on sensor
+
+unsigned short readFrontSensor (void)
+{
+   return (unsigned short) ATD1DR0L;
+}
+
+unsigned short readRightWheel (void)
+{
+   return (unsigned short) ATD1DR6L;
+}
+
+unsigned short readRightWall (void)
+{
+   return (unsigned short) ATD1DR4L;
+}
+
+unsigned short readRightAlign (void)
+{
+   return (unsigned short) ATD1DR3L;
+}
+
+unsigned short readLeftWheel (void)
+{
+   return (unsigned short) ATD1DR5L;
+}
+
+unsigned short readLeftWall (void)
+{
+   return (unsigned short) ATD1DR2L;
+}
+
+unsigned short readLeftAlign (void)
+{
+   return (unsigned short) ATD1DR1L; 
+}
+
+void showSensors(void)
+{
+   printf("                   FRONT SENSOR==%x\n\r",ATD1DR0L);
+   printf("RIGHT WHEEL SENSOR==%02x   RIGHT WALL SENSOR==%02x\n\r",readRightWheel(),readRightWall());
+   printf("LEFT WHEEL SENSOR==%02x    LEFT WALL SENSOR==%02x\n\r",readLeftWheel(),readLeftWall());
+   printf("L ALIGNMENT SENSOR==%02x   R ALIGNMENT SENSOR==%02x\n\r",readLeftAlign(),readRightAlign());
+}                                                       
